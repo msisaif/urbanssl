@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid } from 'lucide-vue-next';
+import {
+    Building2,
+    FolderKanban,
+    Info,
+    LayoutGrid,
+    Mail,
+    Tags,
+} from 'lucide-vue-next';
 import AppLogo from '@/components/AppLogo.vue';
-import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
 import {
@@ -23,18 +29,30 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
-];
-
-const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: FolderGit2,
+        title: 'Services',
+        href: '/admin/services',
+        icon: Building2,
     },
     {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
+        title: 'Categories',
+        href: '/admin/categories',
+        icon: Tags,
+    },
+    {
+        title: 'Projects',
+        href: '/admin/projects',
+        icon: FolderKanban,
+    },
+    {
+        title: 'Contact Info',
+        href: '/admin/contact-info',
+        icon: Mail,
+    },
+    {
+        title: 'About Info',
+        href: '/admin/about-info',
+        icon: Info,
     },
 ];
 </script>
@@ -58,7 +76,6 @@ const footerNavItems: NavItem[] = [
         </SidebarContent>
 
         <SidebarFooter>
-            <NavFooter :items="footerNavItems" />
             <NavUser />
         </SidebarFooter>
     </Sidebar>
